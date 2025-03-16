@@ -6,7 +6,7 @@ const axios = require("axios");
 const useragent = require("useragent");
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 
 
