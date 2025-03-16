@@ -12,10 +12,10 @@ app.use(cors());
 app.use(express.json());
 
 // 📌 MongoDB Connection
-mongoose.connect("mongodb://localhost:27017/profileViews", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ MongoDB Connected'))
+  .catch((err) => console.log('❌ MongoDB Connection Error:', err));
+
 
 // 📌 Visitor Schema
 const visitorSchema = new mongoose.Schema({
